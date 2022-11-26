@@ -1,6 +1,6 @@
 /* Imports */
 
-import { redirectIfLoggedIn, signUpUser } from './fetch-utils.js';
+import { redirectIfLoggedIn, signUpUser, signInUser } from './fetch-utils.js';
 
 /* Get DOM Elements */
 const signUpForm = document.getElementById('sign-up');

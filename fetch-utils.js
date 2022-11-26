@@ -40,3 +40,22 @@ export async function logout() {
     await client.auth.signOut();
     return (window.location.href = '/');
 }
+
+// fetch posts function
+export async function fetchPosts() {
+    const response = await client.from('demo_posts').select('*');
+    response.data;
+}
+// create posts function
+export async function createNewPost(post) {
+    const response = await client.from('demo_posts').insert(post);
+    if (response.data) {
+        return response.data;
+    } else {
+        // console.error(response.error);
+    }
+}
+
+window.addEventListener('load', async () => {
+    const posts = await fetchPosts();
+});
