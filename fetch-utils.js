@@ -13,6 +13,11 @@ export async function signUpUser(email, password) {
     }
 }
 
+export function checkAuth() {
+    const user = getUser();
+    if (!user) location.replace('/');
+}
+
 // Get out client's session and session user
 export async function getUser() {
     return client.auth.session() && client.auth.session().user;
@@ -22,6 +27,6 @@ export async function redirectIfLoggedIn() {
     const user = getUser();
 
     if (!user) {
-        location.replace('/');
+        location.replace('./other-page');
     }
 }
