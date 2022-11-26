@@ -30,3 +30,8 @@ export async function redirectIfLoggedIn() {
         location.replace('./other-page');
     }
 }
+
+export async function logout() {
+    await client.auth.signOut();
+    return (window.location.href = '/');
+}
