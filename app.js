@@ -1,11 +1,11 @@
 /* Imports */
 
-import { signUpUser } from './fetch-utils.js';
+import { redirectIfLoggedIn, signUpUser } from './fetch-utils.js';
 
 /* Get DOM Elements */
 const signUpForm = document.getElementById('sign-up');
 
-/* State */
+redirectIfLoggedIn();
 
 /* Events */
 signUpForm.addEventListener('submit', async (e) => {
